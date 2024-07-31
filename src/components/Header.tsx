@@ -30,14 +30,14 @@ const Header = () => {
    <MaxWidthWrapper>
    <div className='flex h-14 items-center justify-between border-b '>
         <Link
-          href='/' className='px-8'>
+          href='/'>
          <Image 
          src={isDarkMode ? '/mengai-dark.svg' : '/mengai.svg'}
           alt='Logo' width={100} height={100} className='h-24'/>
         </Link>
 
 
-        <div className='hidden items-center space-x-4 sm:flex'>
+        <div className='items-center space-x-4 sm:flex'>
         <Button
           onClick={toggleDarkMode}
         >
