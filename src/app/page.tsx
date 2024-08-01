@@ -1,18 +1,16 @@
 'use client'
-import { useState } from 'react';
-import { Send } from 'lucide-react';
+import { ChatProvider } from '@/context/ChatContext';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
 import MessageInput from '@/components/MessageInput';
 import MessageContent from '@/components/MessageContent';
 
 export default function Home() {
-
-
   return (
-<>
-<MaxWidthWrapper>
-<MessageContent/>
-    </MaxWidthWrapper>
-    <MessageInput/></>
+    <ChatProvider>
+      <MaxWidthWrapper>
+        <MessageContent />
+      </MaxWidthWrapper>
+      <MessageInput />
+    </ChatProvider>
   );
 }
