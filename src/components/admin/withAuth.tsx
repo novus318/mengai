@@ -41,7 +41,7 @@ export function withAuth(Component: React.ComponentType) {
       return <Spinner />;
     }
 
-    if (typeof window === 'undefined' || ok === true) {
+    if (typeof window === 'undefined' || ok === false) {
       router.push('/admin');
       return null;
     }

@@ -37,7 +37,7 @@ const handleSubmit = async (event:any) => {
         
     if (response.data.success) {
       localStorage.setItem('pin', pin);
-      router.push('/');
+      router.push('/admin/dashboard');
       setSpin(false)
     } else {
       console.error('Verification failed');
@@ -49,9 +49,9 @@ const handleSubmit = async (event:any) => {
 };
 
 useEffect(() => {
-  const storedPin = localStorage.getItem('pinw');
+  const storedPin = localStorage.getItem('pin');
   if (storedPin) {
-    router.push('/');
+    router.push('/admin/dashboard');
   }
 }, []); 
   return (
@@ -61,7 +61,7 @@ useEffect(() => {
        <img src={isDarkMode ? '/mengai.svg': '/mengai-dark.svg'} alt="" className='h-10' />
       </div>
       <h2 className="text-3xl text-slate-950 dark:text-stone-50 font-bold mb-6">Welcome to Admin</h2>
-      <form >
+      <form  onSubmit={handleSubmit}>
         <div className="mb-4">
           <Input
             type="password"
